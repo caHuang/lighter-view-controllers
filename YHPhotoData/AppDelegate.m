@@ -17,6 +17,12 @@
 
 @implementation AppDelegate
 
+#pragma mark - Shared
+
++ (instancetype)sharedDelegate {
+  return [UIApplication sharedApplication].delegate;
+}
+
 #pragma mark - Setup
 
 - (void)setupRootViewController {
