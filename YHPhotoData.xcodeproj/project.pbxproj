@@ -12,6 +12,7 @@
 		F01F7CBF1A89F11700CB42FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F01F7CBE1A89F11700CB42FE /* Images.xcassets */; };
 		F01F7CCE1A89F11700CB42FE /* YHPhotoDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F7CCD1A89F11700CB42FE /* YHPhotoDataTests.m */; };
 		F01F7CDA1A89FAFB00CB42FE /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F7CD91A89FAFB00CB42FE /* PhotosViewController.m */; };
+		F01F7CDD1A8A112000CB42FE /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F7CDC1A8A112000CB42FE /* ArrayDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 		F01F7CCD1A89F11700CB42FE /* YHPhotoDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHPhotoDataTests.m; sourceTree = "<group>"; };
 		F01F7CD81A89FAFB00CB42FE /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
 		F01F7CD91A89FAFB00CB42FE /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
+		F01F7CDB1A8A112000CB42FE /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDataSource.h; sourceTree = "<group>"; };
+		F01F7CDC1A8A112000CB42FE /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				F01F7CB61A89F11700CB42FE /* AppDelegate.m */,
 				F01F7CD81A89FAFB00CB42FE /* PhotosViewController.h */,
 				F01F7CD91A89FAFB00CB42FE /* PhotosViewController.m */,
+				F01F7CDB1A8A112000CB42FE /* ArrayDataSource.h */,
+				F01F7CDC1A8A112000CB42FE /* ArrayDataSource.m */,
 				F01F7CBE1A89F11700CB42FE /* Images.xcassets */,
 				F01F7CB11A89F11600CB42FE /* Supporting Files */,
 			);
@@ -213,6 +218,7 @@
 			files = (
 				F01F7CB71A89F11700CB42FE /* AppDelegate.m in Sources */,
 				F01F7CDA1A89FAFB00CB42FE /* PhotosViewController.m in Sources */,
+				F01F7CDD1A8A112000CB42FE /* ArrayDataSource.m in Sources */,
 				F01F7CB41A89F11700CB42FE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
