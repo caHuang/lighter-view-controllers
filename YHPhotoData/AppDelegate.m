@@ -9,13 +9,27 @@
 #import "AppDelegate.h"
 #import "PhotosViewController.h"
 
+@interface AppDelegate()
+
+- (void)setupRootViewController;
+
+@end
+
 @implementation AppDelegate
+
+#pragma mark - Setup
+
+- (void)setupRootViewController {
+  PhotosViewController *photosViewController = [[PhotosViewController alloc] init];
+  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:photosViewController];
+  self.window.rootViewController = navigationController;
+}
 
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  self.window.rootViewController = [[PhotosViewController alloc] init];
+  [self setupRootViewController];
   [self.window makeKeyAndVisible];
   return YES;
 }
