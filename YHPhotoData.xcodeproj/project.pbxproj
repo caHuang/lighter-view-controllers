@@ -13,6 +13,10 @@
 		F01F7CCE1A89F11700CB42FE /* YHPhotoDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F7CCD1A89F11700CB42FE /* YHPhotoDataTests.m */; };
 		F01F7CDA1A89FAFB00CB42FE /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F7CD91A89FAFB00CB42FE /* PhotosViewController.m */; };
 		F01F7CDD1A8A112000CB42FE /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F01F7CDC1A8A112000CB42FE /* ArrayDataSource.m */; };
+		F0EA9DD21A8B022200C7CD79 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EA9DD11A8B022200C7CD79 /* Store.m */; };
+		F0EA9DD41A8B02C600C7CD79 /* photodata.bin in Resources */ = {isa = PBXBuildFile; fileRef = F0EA9DD31A8B02C600C7CD79 /* photodata.bin */; };
+		F0EA9DD71A8B0A2B00C7CD79 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EA9DD61A8B0A2B00C7CD79 /* Photo.m */; };
+		F0EA9DDA1A8B0AC400C7CD79 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EA9DD91A8B0AC400C7CD79 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,13 @@
 		F01F7CD91A89FAFB00CB42FE /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		F01F7CDB1A8A112000CB42FE /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDataSource.h; sourceTree = "<group>"; };
 		F01F7CDC1A8A112000CB42FE /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDataSource.m; sourceTree = "<group>"; };
+		F0EA9DD01A8B022200C7CD79 /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		F0EA9DD11A8B022200C7CD79 /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		F0EA9DD31A8B02C600C7CD79 /* photodata.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = photodata.bin; sourceTree = "<group>"; };
+		F0EA9DD51A8B0A2B00C7CD79 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		F0EA9DD61A8B0A2B00C7CD79 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		F0EA9DD81A8B0AC400C7CD79 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		F0EA9DD91A8B0AC400C7CD79 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +95,13 @@
 				F01F7CB61A89F11700CB42FE /* AppDelegate.m */,
 				F01F7CD81A89FAFB00CB42FE /* PhotosViewController.h */,
 				F01F7CD91A89FAFB00CB42FE /* PhotosViewController.m */,
+				F0EA9DD31A8B02C600C7CD79 /* photodata.bin */,
+				F0EA9DD01A8B022200C7CD79 /* Store.h */,
+				F0EA9DD11A8B022200C7CD79 /* Store.m */,
+				F0EA9DD51A8B0A2B00C7CD79 /* Photo.h */,
+				F0EA9DD61A8B0A2B00C7CD79 /* Photo.m */,
+				F0EA9DD81A8B0AC400C7CD79 /* User.h */,
+				F0EA9DD91A8B0AC400C7CD79 /* User.m */,
 				F01F7CDB1A8A112000CB42FE /* ArrayDataSource.h */,
 				F01F7CDC1A8A112000CB42FE /* ArrayDataSource.m */,
 				F01F7CBE1A89F11700CB42FE /* Images.xcassets */,
@@ -198,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EA9DD41A8B02C600C7CD79 /* photodata.bin in Resources */,
 				F01F7CBF1A89F11700CB42FE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,9 +235,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EA9DD71A8B0A2B00C7CD79 /* Photo.m in Sources */,
+				F0EA9DDA1A8B0AC400C7CD79 /* User.m in Sources */,
 				F01F7CB71A89F11700CB42FE /* AppDelegate.m in Sources */,
 				F01F7CDA1A89FAFB00CB42FE /* PhotosViewController.m in Sources */,
 				F01F7CDD1A8A112000CB42FE /* ArrayDataSource.m in Sources */,
+				F0EA9DD21A8B022200C7CD79 /* Store.m in Sources */,
 				F01F7CB41A89F11700CB42FE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +417,7 @@
 				F01F7CD31A89F11700CB42FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F01F7CD41A89F11700CB42FE /* Build configuration list for PBXNativeTarget "YHPhotoDataTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +426,7 @@
 				F01F7CD61A89F11700CB42FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
