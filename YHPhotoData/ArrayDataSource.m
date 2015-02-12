@@ -29,7 +29,7 @@
   if (self) {
     self.items = anItems;
     self.cellIdentifier = aCellIdentifier;
-    self.configureCellBlock = aConfigureCellBlock;
+    self.configureCellBlock = [aConfigureCellBlock copy];
   }
   return self;
 }
@@ -47,6 +47,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier
                                                           forIndexPath:indexPath];
+  if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:self.cellIdentifier];
+  }
   id item = [self itemAtIndexPath:indexPath];
   self.configureCellBlock(cell, item);
   return cell;

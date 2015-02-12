@@ -7,6 +7,9 @@
 //
 
 #import "PhotosViewController.h"
+#import "AppDelegate.h"
+#import "Store.h"
+#import "Photo.h"
 #import "ArrayDataSource.h"
 
 static NSString * const PhotoCellIdentifier = @"PhotoCell";
@@ -16,6 +19,7 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
 - (void)setupTableView;
 
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) ArrayDataSource *photosDataSource;
 
 @end
 
@@ -25,14 +29,16 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
 
 - (void)loadView {
   [super loadView];
+  UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
   self.view.backgroundColor = [UIColor whiteColor];
-  [self setupTableView];
-  [self.view addSubview:self.tableView];
+  self.view = view;
 }
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.title = @"Photos";
+  [self setupTableView];
+  [self.view addSubview:self.tableView];
 }
 
 #pragma mark - Setup
@@ -40,6 +46,18 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
 - (void)setupTableView {
   self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
   self.tableView.delegate = self;
+  
+  TableViewCellConfigureBlock configureCell = ^(UITableViewCell *cell, Photo *photo) {
+    cell.textLabel.text = photo.name;
+  };
+
+  Store *store = [AppDelegate sharedDelegate].store;
+  NSArray *photos = store.sortedPhotos;
+  self.photosDataSource = [[ArrayDataSource alloc] initWithItems:photos
+                                                  cellIdentifier:PhotoCellIdentifier
+                                              configureCellBlock:configureCell];
+  self.tableView.dataSource = self.photosDataSource;
+  [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:PhotoCellIdentifier];
 }
 
 #pragma mark - UITableViewDelegate

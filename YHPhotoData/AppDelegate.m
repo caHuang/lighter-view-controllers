@@ -8,10 +8,13 @@
 
 #import "AppDelegate.h"
 #import "PhotosViewController.h"
+#import "Store.h"
 
 @interface AppDelegate()
 
 - (void)setupRootViewController;
+
+@property (readwrite, strong, nonatomic) Store *store;
 
 @end
 
@@ -21,6 +24,15 @@
 
 + (instancetype)sharedDelegate {
   return [UIApplication sharedApplication].delegate;
+}
+
+#pragma mark - Properties Access
+
+- (Store *)store {
+  if (_store == nil) {
+    _store = [Store store];
+  }
+  return _store;
 }
 
 #pragma mark - Setup

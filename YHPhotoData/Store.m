@@ -7,6 +7,7 @@
 //
 
 #import "Store.h"
+#import "Photo.h"
 
 @interface Store()
 
@@ -36,12 +37,15 @@
   NSAssert(archiveURL != nil, @"Unable to find archive in bundle.");
   NSData *data = [NSData dataWithContentsOfURL:archiveURL options:0 error:NULL];
   NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-  self.photos = [unarchiver decodeObjectOfClass:[NSArray class] forKey:@"users"];
-  self.users = [unarchiver decodeObjectOfClass:[NSArray class] forKey:@"photos"];
+  self.users = [unarchiver decodeObjectOfClass:[NSArray class] forKey:@"users"];
+  self.photos = [unarchiver decodeObjectOfClass:[NSArray class] forKey:@"photos"];
   [unarchiver finishDecoding];
 }
 
 - (NSArray *)sortedPhotos {
+  return [self.photos sortedArrayUsingComparator:^NSComparisonResult(Photo *photo1, Photo *photo2) {
+    return [photo2.creationDate compare:photo1.creationDate];
+  }];
 }
 
 @end
