@@ -11,6 +11,7 @@
 #import "Store.h"
 #import "Photo.h"
 #import "ArrayDataSource.h"
+#import "PhotoCell+ConfigureForPhoto.h"
 
 static NSString * const PhotoCellIdentifier = @"PhotoCell";
 
@@ -47,8 +48,8 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
   self.tableView = [[UITableView alloc] initWithFrame:self.view.frame];
   self.tableView.delegate = self;
   
-  TableViewCellConfigureBlock configureCell = ^(UITableViewCell *cell, Photo *photo) {
-    cell.textLabel.text = photo.name;
+  TableViewCellConfigureBlock configureCell = ^(PhotoCell *cell, Photo *photo) {
+    [cell configureForPhoto:photo];
   };
 
   Store *store = [AppDelegate sharedDelegate].store;
@@ -57,12 +58,16 @@ static NSString * const PhotoCellIdentifier = @"PhotoCell";
                                                   cellIdentifier:PhotoCellIdentifier
                                               configureCellBlock:configureCell];
   self.tableView.dataSource = self.photosDataSource;
-  [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:PhotoCellIdentifier];
+  [self.tableView registerClass:[PhotoCell class] forCellReuseIdentifier:PhotoCellIdentifier];
 }
 
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return 60.0f;
 }
 
 @end
